@@ -1,0 +1,5 @@
+name: SkyVulcano
+version: 1.0
+author: GeekLegend
+main: fr.geeklegend.vylaria.skyvulcano.SkyVulcano
+depends: [VylariaAPI]
