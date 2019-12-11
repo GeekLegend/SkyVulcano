@@ -205,12 +205,12 @@ public class SkyVulcano extends JavaPlugin
 
 		scoreboardManager.onDisable();
 
-		Bukkit.unloadWorld("world", false);
+		Bukkit.unloadWorld(Config.getDefaultConfig().getString("game.world"), false);
 
-		WorldUtils.deleteWorld(new File("world"));
+		WorldUtils.deleteWorld(new File(Config.getDefaultConfig().getString("game.world")));
 
-		File from = new File("worldcopy");
-		File to = new File("world");
+		File from = new File(Config.getDefaultConfig().getString("game.world") + "copy");
+		File to = new File(Config.getDefaultConfig().getString("game.world"));
 
 		try
 		{

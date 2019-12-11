@@ -35,7 +35,10 @@ public class GameManager
 			Config.getDefaultConfig().getDouble("game.nuggets.spawn.x"),
 			Config.getDefaultConfig().getDouble("game.nuggets.spawn.y"),
 			Config.getDefaultConfig().getDouble("game.nuggets.spawn.z"));
-	private static int magicianLevel = 1, armorerLevel = 1, fletcherLevel = 1, weaponSmithLevel = 1;
+	private static int magicianLevel = 1, 
+					   armorerLevel = 1, 
+					   fletcherLevel = 1, 
+					   weaponSmithLevel = 1;
 
 	public static void load()
 	{
@@ -216,6 +219,7 @@ public class GameManager
 
 		player.setLevel(0);
 		player.setGameMode(GameMode.valueOf(Config.getDefaultConfig().getString("setups.game.gamemode").toUpperCase()));
+		
 		for (PotionEffect effects : player.getActivePotionEffects())
 		{
 			player.removePotionEffect(effects.getType());
@@ -290,6 +294,7 @@ public class GameManager
 			ItemBuilder i = new ItemBuilder(item, itemAmount);
 
 			i.setDurability(itemData);
+			
 			if (enchanted)
 			{
 				for (Enchantment e : enchantments)

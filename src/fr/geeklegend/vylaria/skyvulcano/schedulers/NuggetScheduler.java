@@ -1,6 +1,5 @@
 package fr.geeklegend.vylaria.skyvulcano.schedulers;
 
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -20,8 +19,7 @@ public class NuggetScheduler extends BukkitRunnable
 		
 		if (timer == 0)
 		{
-			Location location = GameManager.getNuggetLocation();
-			location.getWorld().dropItemNaturally(location, new ItemBuilder(Material.valueOf(Config.getDefaultConfig().getString("game.nuggets.material").toUpperCase().replace(" ", "_"))).toItemStack());
+			GameManager.getNuggetLocation().getWorld().dropItemNaturally(GameManager.getNuggetLocation(), new ItemBuilder(Material.valueOf(Config.getDefaultConfig().getString("game.nuggets.material").toUpperCase().replace(" ", "_"))).toItemStack());
 			
 			reset();
 		}
